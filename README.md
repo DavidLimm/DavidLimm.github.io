@@ -24,4 +24,4 @@ Página estática de apresentação profissional desenvolvida com HTML e CSS pur
 
 ## Acesso
 
-[davidlimma007.github.io](https://davidlimma007.github.io)
+[davidlimm.github.io](https://davidlimm.github.io/)
