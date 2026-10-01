@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>David Lima — Desenvolvedor Full Stack</title>
-<meta name="description" content="Portfólio de David Lima, desenvolvedor full stack em formação. Java, JavaScript, Spring Boot, Node.js, PostgreSQL, Docker e AWS.">
+<meta name="description" content="Portfólio de David Lima, desenvolvedor full stack em formação. Java, Spring Boot, React, PostgreSQL e Docker.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -206,6 +206,13 @@ section{ padding: 96px 0; }
 .proj-link{ font-family: var(--font-mono); color: var(--accent); font-size: 13px; font-weight:500; }
 .proj-link:hover{ text-decoration: underline; }
 
+/* ============ EXPERIENCE ============ */
+.experience{ border-top: 1px solid var(--border); }
+.exp-meta{ font-family: var(--font-mono); font-size: 12.5px; color: var(--muted); }
+.exp-list{ margin:0; padding-left: 18px; color: var(--muted); font-size: 14.5px; max-width: 640px; }
+.exp-list li{ margin-bottom: 6px; }
+.exp-list li::marker{ color: var(--accent); }
+
 /* ============ CONTACT ============ */
 .contact{ border-top: 1px solid var(--border); }
 .contact h2{ font-size: 30px; margin-bottom: 14px; }
@@ -239,9 +246,10 @@ footer{
     <nav>
       <ul class="nav-links">
         <li><a href="#sobre">sobre</a></li>
+        <li><a href="#experiencia">experiência</a></li>
         <li><a href="#projetos">projetos</a></li>
         <li><a href="#contato">contato</a></li>
-        <li class="status-pill"><span class="dot"></span>disponível p/ estágio</li>
+        <li class="status-pill"><span class="dot"></span>estágio ou júnior</li>
       </ul>
     </nav>
     <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
@@ -253,11 +261,11 @@ footer{
   <!-- HERO -->
   <section class="hero wrap">
     <p class="terminal-line">
-      <span class="prompt-sign">$</span><span id="typed-text">status --estagio: disponível</span><span class="caret" aria-hidden="true"></span>
+      <span class="prompt-sign">$</span><span id="typed-text">status --vaga: estágio | júnior</span><span class="caret" aria-hidden="true"></span>
     </p>
     <h1>David Lima</h1>
-    <p class="role">Desenvolvedor Full Stack em formação — Java, JavaScript &amp; Cloud</p>
-    <p class="lede">Estudante de Análise e Desenvolvimento de Sistemas em Recife, construindo APIs e aplicações web de ponta a ponta enquanto me preparo para a minha primeira oportunidade na área.</p>
+    <p class="role">Desenvolvedor Full Stack em formação — Java, Spring Boot &amp; React</p>
+    <p class="lede">Estudante de Análise e Desenvolvimento de Sistemas em Recife, construindo APIs e aplicações web de ponta a ponta, com bagagem em regras de negócio e dados financeiros vinda da contabilidade.</p>
     <div class="cta-row">
       <a href="#projetos" class="btn btn-primary">Ver projetos</a>
       <a href="#contato" class="btn btn-ghost">Falar comigo</a>
@@ -273,9 +281,9 @@ footer{
       </div>
       <div class="about-grid">
         <div class="reveal">
-          <p>Sou estudante de <strong>ADS</strong> em Recife e desenvolvo aplicações full stack. No backend, trabalho principalmente com <strong>Java</strong> e <strong>Spring Boot</strong>, estruturando APIs REST e modelando dados com <strong>PostgreSQL</strong>. No ecossistema <strong>JavaScript</strong>, uso <strong>Node.js</strong> para construir serviços e integrações.</p>
-          <p>Containerizo o que construo com <strong>Docker</strong> e venho levando esses projetos para a nuvem com <strong>AWS</strong>, porque código que só roda na minha máquina ainda não está pronto.</p>
-          <p>Ainda não tive uma experiência profissional formal — e é exatamente por isso que esse portfólio existe: documentar o processo real de construção dos meus projetos, não só o resultado final.</p>
+          <p>Sou estudante de <strong>ADS</strong> em Recife e desenvolvo aplicações full stack. No back-end, trabalho com <strong>Java</strong> e <strong>Spring Boot</strong>, estruturando APIs REST com <strong>Spring Data JPA</strong>, <strong>PostgreSQL</strong> e migrations com <strong>Flyway</strong>. No front-end, construo interfaces com <strong>React</strong>.</p>
+          <p>Containerizo o que construo com <strong>Docker</strong> e escrevo testes de integração com <strong>Testcontainers</strong>, rodando contra o mesmo banco de produção — porque código que só funciona na minha máquina ainda não está pronto.</p>
+          <p>Antes do código veio a contabilidade: sou formado em <strong>Ciências Contábeis</strong> e, desde 2022, trabalho com a gestão de cerca de 300 contratos. Ainda não tive uma experiência formal como desenvolvedor, mas lido diariamente com regras de negócio, conciliação de dados e investigação de inconsistências — e levo essa visão para o software que construo.</p>
           <p>Também estou aprendendo inglês ativamente, porque boa parte da documentação técnica boa é escrita primeiro em inglês — e eu quero ler o original, não a tradução.</p>
         </div>
         <div class="reveal">
@@ -284,28 +292,86 @@ footer{
             <div class="tags">
               <span class="tag">Java</span>
               <span class="tag">JavaScript</span>
+              <span class="tag">SQL</span>
             </div>
           </div>
           <div class="stack-group">
-            <h3>frameworks &amp; dados</h3>
+            <h3>back-end</h3>
             <div class="tags">
               <span class="tag">Spring Boot</span>
-              <span class="tag">Node.js</span>
+              <span class="tag">Spring Data JPA</span>
+              <span class="tag">Spring Security</span>
+              <span class="tag">JWT</span>
+              <span class="tag">Swagger/OpenAPI</span>
+            </div>
+          </div>
+          <div class="stack-group">
+            <h3>front-end</h3>
+            <div class="tags">
+              <span class="tag">React</span>
+              <span class="tag">React Router</span>
+              <span class="tag">TanStack Query</span>
+              <span class="tag">Tailwind CSS</span>
+              <span class="tag">Vite</span>
+            </div>
+          </div>
+          <div class="stack-group">
+            <h3>dados &amp; testes</h3>
+            <div class="tags">
               <span class="tag">PostgreSQL</span>
+              <span class="tag">Flyway</span>
+              <span class="tag">JUnit 5</span>
+              <span class="tag">Mockito</span>
+              <span class="tag">Testcontainers</span>
             </div>
           </div>
           <div class="stack-group">
             <h3>infra &amp; ferramentas</h3>
             <div class="tags">
               <span class="tag">Docker</span>
-              <span class="tag">AWS</span>
+              <span class="tag">Docker Compose</span>
               <span class="tag">Git</span>
-              <span class="tag">Notion</span>
-              <span class="tag">Miro</span>
-              <span class="tag">Figma</span>
+              <span class="tag">GitHub</span>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIÊNCIA -->
+  <section class="experience" id="experiencia">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">// experiência</span>
+        <h2>Onde aprendi regras de negócio na prática</h2>
+      </div>
+      <div class="proj-list">
+
+        <article class="proj-card reveal">
+          <div class="proj-top">
+            <span class="proj-title">Assistente Financeiro e de Contratos — ABASOL Imóveis</span>
+            <span class="pill pill-live">atual</span>
+          </div>
+          <span class="exp-meta">Recife, PE · set/2022 – atual</span>
+          <ul class="exp-list">
+            <li>Gestão financeira e contratual de uma carteira de cerca de 300 contratos, com automação de rotinas e relatórios e regras de validação para identificar inconsistências.</li>
+            <li>Conciliação de dados entre sistemas, rastreando a origem das divergências e corrigindo os registros de forma estruturada.</li>
+            <li>Tratamento de dados pessoais e financeiros sensíveis com foco em integridade, rastreabilidade e conformidade com a LGPD.</li>
+          </ul>
+        </article>
+
+        <article class="proj-card reveal">
+          <div class="proj-top">
+            <span class="proj-title">Estagiário de Contabilidade — TRT da 6ª Região</span>
+          </div>
+          <span class="exp-meta">Recife, PE · jan/2021 – jun/2022</span>
+          <ul class="exp-list">
+            <li>Elaboração de cálculos e automação de rotinas de processamento de dados trabalhistas.</li>
+            <li>Apoio na conciliação contábil e bancária, com foco em precisão e consistência dos registros.</li>
+          </ul>
+        </article>
+
       </div>
     </div>
   </section>
@@ -326,15 +392,54 @@ footer{
             <span class="proj-title">registro-corista-api</span>
             <span class="pill pill-live">no github</span>
           </div>
-          <p class="proj-desc">API de cadastro e gestão de coristas para uma igreja, com modelo de controle de acesso baseado em papéis (RBAC), onboarding por link de convite e arquitetura MVC sobre PostgreSQL.</p>
+          <p class="proj-desc">API REST para gestão da mocidade da IEAD-PE, com MVP na Área 40 e modelo de dados preparado para as 74 áreas. Pessoa como entidade única e Corista como especialização 1:1, classificação etária automática, workflow de aprovação, soft delete e conformidade com a LGPD para menores. Migrations com Flyway, erros no padrão RFC 7807 e testes com JUnit 5, Mockito e Testcontainers.</p>
+          <div class="proj-bottom">
+            <div class="tags">
+              <span class="tag">Java 21</span>
+              <span class="tag">Spring Boot</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Flyway</span>
+              <span class="tag">Testcontainers</span>
+              <span class="tag">Docker</span>
+            </div>
+            <a class="proj-link" href="https://github.com/DavidLimm/registro-corista-api" target="_blank" rel="noopener">ver no GitHub →</a>
+          </div>
+        </article>
+
+        <article class="proj-card reveal">
+          <div class="proj-top">
+            <span class="proj-title">registro-corista-front</span>
+            <span class="pill pill-soon">em andamento</span>
+          </div>
+          <p class="proj-desc">Front-end em React do Registro de Coristas. Já tem rotas protegidas por papel (liderança e corista), layouts por perfil e um cliente HTTP com Axios que trata centralmente os erros no padrão Problem Details da API. Próximos passos: telas de cadastro, aprovações e dashboards.</p>
+          <div class="proj-bottom">
+            <div class="tags">
+              <span class="tag">React</span>
+              <span class="tag">React Router</span>
+              <span class="tag">TanStack Query</span>
+              <span class="tag">Axios</span>
+              <span class="tag">Tailwind CSS</span>
+            </div>
+            <a class="proj-link" href="https://github.com/DavidLimm/registro-corista-front" target="_blank" rel="noopener">ver no GitHub →</a>
+          </div>
+        </article>
+
+        <article class="proj-card reveal">
+          <div class="proj-top">
+            <span class="proj-title">academysystem</span>
+            <span class="pill pill-live">no github</span>
+          </div>
+          <p class="proj-desc">API REST de gestão de academia — alunos, funcionários, treinos, exercícios e avaliações físicas. Autenticação JWT com filtro customizado no Spring Security, autorização por papéis (ADMIN, FUNCIONÁRIO, ALUNO), paginação, tratamento global de exceções e documentação Swagger. Construída em etapas, um conceito por vez.</p>
           <div class="proj-bottom">
             <div class="tags">
               <span class="tag">Java</span>
               <span class="tag">Spring Boot</span>
+              <span class="tag">Spring Security</span>
+              <span class="tag">JWT</span>
               <span class="tag">PostgreSQL</span>
-              <span class="tag">RBAC</span>
+              <span class="tag">Docker</span>
             </div>
-            <a class="proj-link" href="https://github.com/DavidLimm/registro-corista-api" target="_blank" rel="noopener">ver no GitHub →</a>
+            <a class="proj-link" href="https://github.com/DavidLimm/academysystem" target="_blank" rel="noopener">ver no GitHub →</a>
           </div>
         </article>
 
@@ -358,22 +463,6 @@ footer{
           </div>
         </article>
 
-        <article class="proj-card reveal">
-          <div class="proj-top">
-            <span class="proj-title">Sistema de Cadastro de Academia</span>
-            <span class="pill pill-soon">em andamento</span>
-          </div>
-          <p class="proj-desc">Cadastro e gestão de academia — alunos, planos e matrículas. Estou construindo aos poucos pra fixar conceitos de backend na prática.</p>
-          <div class="proj-bottom">
-            <div class="tags">
-              <span class="tag">Java</span>
-              <span class="tag">PostgreSQL</span>
-              <span class="tag">Docker</span>
-            </div>
-            <a class="proj-link" href="https://github.com/DavidLimm/academysystem" target="_blank" rel="noopener">ver no GitHub →</a>
-          </div>
-        </article>
-
       </div>
     </div>
   </section>
@@ -384,7 +473,7 @@ footer{
       <div class="reveal">
         <span class="eyebrow">// contato</span>
         <h2>Bora trocar uma ideia?</h2>
-        <p class="lede">Aberto a oportunidades de estágio em desenvolvimento full stack. Respondo rápido.</p>
+        <p class="lede">Aberto a oportunidades de estágio ou vaga júnior em desenvolvimento full stack ou back-end. Respondo rápido.</p>
       </div>
       <div class="contact-grid reveal">
         <a class="contact-item" href="mailto:davidlimma05@gmail.com">
